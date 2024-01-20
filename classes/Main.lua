@@ -39,21 +39,21 @@ function Main:new(config_)
 
     --draw all information on the screen
     function obj:printMachinesInfo()
-        local display = self.display
+        local display = obj.display
         display:clear()
         display:printKeysInfo()
         display:printVerticalSeparator()
-        print("computers detected: " .. #self.computers)
-        print("dysons detected: " .. #self.dysons)
-        print("machines fixed: " .. self.machinesFixed)
+        print("computers detected: " .. #obj.computers)
+        print("dysons detected: " .. #obj.dysons)
+        print("machines fixed: " .. obj.machinesFixed)
         display:printVerticalSeparator()
         display:drawText("dysons\n", colors.BLUE)
         display:printVerticalSeparator()
-        display:printMachineLines(self.dysons)
+        display:printMachineLines(obj.dysons)
         display:printVerticalSeparator()
         display:drawText("computers\n", colors.BLUE)
         display:printVerticalSeparator()
-        display:printMachineLines(self.computers)
+        display:printMachineLines(obj.computers)
         display:printVerticalSeparator()
     end
 
@@ -67,21 +67,23 @@ function Main:new(config_)
     --refresh every dysons/computers state
     function obj:refreshAllMachinesStates(computersFlag, dysonsFlag)
         computersFlag = computersFlag or true
-        dysonsFlag = dysonsFlag or false
+        dysonsFlag = dysonsFlag or true
 
         if computersFlag then
-            obj:refreshMachinesState(self.computers)
+            obj:refreshMachinesState(obj.computers)
         end
 
         if dysonsFlag then
-            obj:refreshMachinesState(self.dysons)
+            obj:refreshMachinesState(obj.dysons)
         end
     end
 
     --try to fix every machine state from array
     function obj:fixMachinesState(machinesArray)
         for _, v in pairs(machinesArray) do
-            v:fixState()
+            if v:fixState() then
+                obj.machinesFixed = obj.machinesFixed + 1
+            end
         end
     end
 
@@ -93,18 +95,18 @@ function Main:new(config_)
         dysonsFlag = dysonsFlag or false
 
         if computersFlag then
-            self:fixMachinesState(self.computers)
+            obj:fixMachinesState(obj.computers)
         end
 
         if dysonsFlag then
-            self:fixMachinesState(self.dysons)
+            obj:fixMachinesState(obj.dysons)
         end
     end
 
     --redraw screen
     function obj:refreshScreen()
-        self:refreshAllMachinesStates()
-        self:printMachinesInfo()
+        obj:refreshAllMachinesStates()
+        obj:printMachinesInfo()
     end
 
     setmetatable(obj, self)

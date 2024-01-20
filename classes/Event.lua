@@ -27,8 +27,8 @@ function Event:new(config_)
 
     --destroy corresponding events on program exit
     function obj:destroyEvents()
-        event.cancel(self.refreshScreenEventId)
-        event.cancel(self.fixAllEventId)
+        event.cancel(obj.refreshScreenEventId)
+        event.cancel(obj.fixAllEventId)
     end
 
     function obj:unknownEvent()
