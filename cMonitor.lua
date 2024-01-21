@@ -1,10 +1,10 @@
 -- local tty = require("tty")
 -- local gpu = tty.gpu()
 
-local Event = require("classes.Event")
-local event = Event:new({})
+local Main = require("classes.Main")
+local program = Main:new({})
 
-event:runProgram()
+program:run()
 
 -- print("test11")
 
