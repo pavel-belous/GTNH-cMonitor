@@ -1,4 +1,4 @@
-local eventType = require("lib.enum.eventTypes")
+local eventType = require("cMonitor.lib.enum.eventTypes")
 
 local pageFilters = {
     dysons = {

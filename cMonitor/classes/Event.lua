@@ -1,5 +1,5 @@
-local colors = require("lib.enum.colors")
-local Main = require("classes.Main")
+local colors = require("cMonitor.lib.enum.colors")
+local Main = require("cMonitor.classes.Main")
 
 local Event = {}
 function Event:new(config_)

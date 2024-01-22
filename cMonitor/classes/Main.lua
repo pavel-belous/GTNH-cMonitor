@@ -1,9 +1,9 @@
 local component = require("component")
-local colors = require("lib.enum.colors")
-local stateFilters = require("lib.enum.stateFilters")
+local colors = require("cMonitor.lib.enum.colors")
+local stateFilters = require("cMonitor.lib.enum.stateFilters")
 local event = require("event")
-local Machine = require("classes.Machine")
-local Display = require("classes.Display")
+local Machine = require("cMonitor.classes.Machine")
+local Display = require("cMonitor.classes.Display")
 
 local Main = {}
 

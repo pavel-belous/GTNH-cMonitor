@@ -1,4 +1,4 @@
-local colors = require("lib.enum.colors")
+local colors = require("cMonitor.lib.enum.colors")
 local machineStates = {
     working = {
         code = 1,

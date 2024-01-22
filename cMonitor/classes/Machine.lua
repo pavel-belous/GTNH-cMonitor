@@ -1,4 +1,4 @@
-local machineStates = require("lib.enum.machineStates")
+local machineStates = require("cMonitor.lib.enum.machineStates")
 local Machine = {}
 function Machine:new(proxy_, shouldFix)
 

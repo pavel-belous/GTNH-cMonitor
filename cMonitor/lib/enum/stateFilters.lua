@@ -1,5 +1,5 @@
-local machineStates = require("lib.enum.machineStates")
-local eventType = require("lib.enum.eventTypes")
+local machineStates = require("cMonitor.lib.enum.machineStates")
+local eventType = require("cMonitor.lib.enum.eventTypes")
 
 local stateFilters = {
     [2] = {

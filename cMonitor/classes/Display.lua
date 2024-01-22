@@ -1,6 +1,6 @@
 local tty = require("tty")
 local term = require("term")
-local colors = require("lib.enum.colors")
+local colors = require("cMonitor.lib.enum.colors")
 
 local Display = {}
 function Display:new(config_, stateFilter)
@@ -12,7 +12,7 @@ function Display:new(config_, stateFilter)
     obj.getc = obj.gpu.getForeground or obj.noop
     obj.colors = colors
     obj.stateFilter = stateFilter or {}
-    obj.stateFilters = require("lib.enum.stateFilters") or {}
+    obj.stateFilters = require("cMonitor.lib.enum.stateFilters") or {}
 
     --write colored text into stdout, restore previous color
     ---@param part string text to display
