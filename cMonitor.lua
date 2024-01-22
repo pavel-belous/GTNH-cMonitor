@@ -1,7 +1,7 @@
 -- local tty = require("tty")
 -- local gpu = tty.gpu()
 
-local Main = require("cMonitor.classess.Main")
+local Main = require("cMonitor.classes.Main")
 local program = Main:new({})
 
 program:run()
