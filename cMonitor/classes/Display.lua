@@ -19,10 +19,9 @@ function Display:new(config_, stateFilter)
     ---@param color? integer one of the lib.enum.colors or null
     function obj:drawText(part, color)
         local prev_color = color and obj:getc()
-        --if color ~= nil then print("color:", color) end
-        --if color then obj:setc(color) end
+        if color then obj.setc(color) end
         io.write(part)
-        --if color then obj:setc(prev_color) end
+        if color then obj.setc(prev_color) end
     end
 
 
