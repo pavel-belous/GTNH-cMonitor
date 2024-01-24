@@ -75,6 +75,10 @@ function Main:new(config_)
         end
     end
 
+    function obj.eventHandlers:interrupted()
+        obj:destroyEvents()
+    end
+
     -- The main event handler as function to separate eventID from the remaining arguments
     function obj:handleEvent(eventID, ...)
         if (eventID) then                    -- can be nil if no event was pulled for some time
