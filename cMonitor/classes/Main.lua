@@ -71,7 +71,7 @@ function Main:new(config_)
             if shouldRefreshState then
                 obj:refreshAllMachinesStates()
             end
-            obj:printMachinesInfo()
+            obj:printScreen()
         end
     end
 
@@ -103,7 +103,7 @@ function Main:new(config_)
 
 
     --draw all information on the screen
-    function obj:printMachinesInfo()
+    function obj:printScreen()
         local display = obj.display
         display:clear()
         display:printKeysInfo()
@@ -171,13 +171,13 @@ function Main:new(config_)
     --redraw screen
     function obj:refreshScreen()
         obj:refreshAllMachinesStates()
-        obj:printMachinesInfo()
+        obj:printScreen()
     end
 
     --main program code
     function obj:run()
         self:fillTables()
-        self:printMachinesInfo()
+        self:printScreen()
         self:runBackgroundTasks()
         -- main event loop which processes all events, or sleeps if there is nothing to do
         while self.running do
