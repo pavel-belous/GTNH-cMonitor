@@ -207,5 +207,18 @@ function Main:printComponentFunctions(localComponent)
     end
 end
 
+--dumps table into string
+function Main:dumpTable(o)
+    if type(o) == 'table' then
+        local s = '{ '
+        for k, v in pairs(o) do
+            if type(k) ~= 'number' then k = '"' .. k .. '"' end
+            s = s .. '[' .. k .. '] = ' .. Main:dumpTable(v) .. ','
+        end
+        return s .. '} '
+    else
+        return tostring(o)
+    end
+end
 
 return Main
