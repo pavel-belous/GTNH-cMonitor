@@ -68,6 +68,11 @@ function Display:new(config_, stateFilter)
     end
 
     --self-explaining
+    function obj:setStateFilter(newStateFilter)
+        obj.stateFilter = newStateFilter
+    end
+
+    --self-explaining
     function obj:printVerticalSeparator()
         print("--------------------------------------------------------------------")
     end
