@@ -47,7 +47,7 @@ function Display:new(config_, stateFilter)
         end
 
         if machinesPrinted == 0 then
-            obj:printVerticalSeparator()
+            obj:printHorizontalalSeparator()
             obj:drawText("there is no machines with state ", obj.colors.YELLOW)
             obj:drawText(string.format("%s\n", stateFilter.state.text), obj.colors.GREEN)
         end
@@ -55,7 +55,7 @@ function Display:new(config_, stateFilter)
 
     --display keys info on top of the screen
     function obj:printKeysInfo()
-        obj:printVerticalSeparator()
+        obj:printHorizontalalSeparator()
         for k, v in pairs(obj.stateFilters) do
             if obj.stateFilter.key == v.key then
                 obj:drawText(string.format("%s:%s", v.key, v.text), obj.colors.GREEN)
@@ -73,7 +73,7 @@ function Display:new(config_, stateFilter)
     end
 
     --self-explaining
-    function obj:printVerticalSeparator()
+    function obj:printHorizontalalSeparator()
         print("--------------------------------------------------------------------")
     end
 
