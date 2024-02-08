@@ -21,7 +21,7 @@ local machineStates = {
         color = colors.RED
     },
     idle = {
-        code = 4,
+        code = 5,
         text = "idle\t\t",
         color = colors.YELLOW
     }

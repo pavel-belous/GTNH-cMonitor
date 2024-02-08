@@ -1,36 +1,36 @@
-local eventType = require("cMonitor.lib.enum.eventTypes")
+local eventSource = require("cMonitor.lib.enum.eventSource")
 
 local pageFilters = {
     dysons = {
         [1] = {
-            eventType = eventType.dysonPaginator,
+            eventSource = eventSource.dysonPaginator,
             text = "prev",
             key = "q"
         },
         [2] = {
-            eventType = eventType.dysonPaginator,
+            eventSource = eventSource.dysonPaginator,
             text = "current",
             key = "w",
         },
         [3] = {
-            eventType = eventType.dysonPaginator,
+            eventSource = eventSource.dysonPaginator,
             text = "next",
             key = "e"
         }
     },
     computers = {
         [1] = {
-            eventType = eventType.computerPaginator,
+            eventSource = eventSource.computerPaginator,
             text = "prev",
             key = "a"
         },
         [2] = {
-            eventType = eventType.computerPaginator,
+            eventSource = eventSource.computerPaginator,
             text = "current",
             key = "s",
         },
         [3] = {
-            eventType = eventType.computerPaginator,
+            eventSource = eventSource.computerPaginator,
             text = "next",
             key = "d"
         }

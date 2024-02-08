@@ -27,6 +27,7 @@ function Display:new(config_, stateFilter)
 
     --display machines data
     function obj:printMachineLines(machinesArray)
+        --header
         obj:drawText("coords\t\t\t", obj.colors.YELLOW)
         obj:drawText("status\t\t", obj.colors.YELLOW)
         obj:drawText("progress\n", obj.colors.YELLOW)
@@ -47,17 +48,17 @@ function Display:new(config_, stateFilter)
         end
 
         if machinesPrinted == 0 then
-            obj:printHorizontalalSeparator()
+            obj:printHorizontalSeparator()
             obj:drawText("there is no machines with state ", obj.colors.YELLOW)
             obj:drawText(string.format("%s\n", stateFilter.state.text), obj.colors.GREEN)
         end
     end
 
     --display keys info on top of the screen
-    function obj:printKeysInfo()
-        obj:printHorizontalalSeparator()
+    function obj:printKeysInfo(currentKey)
+        obj:printHorizontalSeparator()
         for k, v in pairs(obj.stateFilters) do
-            if obj.stateFilter.key == v.key then
+            if currentKey == v.key then
                 obj:drawText(string.format("%s:%s", v.key, v.text), obj.colors.GREEN)
                 obj:drawText("|")
             else
@@ -73,7 +74,7 @@ function Display:new(config_, stateFilter)
     end
 
     --self-explaining
-    function obj:printHorizontalalSeparator()
+    function obj:printHorizontalSeparator()
         print("--------------------------------------------------------------------")
     end
 
